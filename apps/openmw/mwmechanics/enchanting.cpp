@@ -150,13 +150,11 @@ namespace MWMechanics
                 case ESM::Enchantment::WhenUsed:
                     if (powerfulSoul && weapclass != ESM::WeaponType::Ammo && weapclass != ESM::WeaponType::Thrown)
                         mCastStyle = ESM::Enchantment::ConstantEffect;
-                    else if (weapclass != ESM::WeaponType::Ranged)
+                    else
                         mCastStyle = ESM::Enchantment::WhenStrikes;
                     return;
                 default: // takes care of Constant effect too
-                    mCastStyle = ESM::Enchantment::WhenUsed;
-                    if (weapclass != ESM::WeaponType::Ranged)
-                        mCastStyle = ESM::Enchantment::WhenStrikes;
+                    mCastStyle = ESM::Enchantment::WhenStrikes;
                     return;
             }
         }
